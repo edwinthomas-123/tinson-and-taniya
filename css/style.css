@@ -195,16 +195,46 @@ button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 72px;
-  height: 72px;
+  gap: 3px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   border: 1px solid rgba(212, 175, 55, 0.6);
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, rgba(11, 13, 19, 0.8) 100%);
-  font-family: var(--font-serif);
-  font-size: 1.8rem;
-  letter-spacing: 2px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.16) 0%, rgba(14, 17, 24, 0.95) 100%);
   color: var(--color-gold-light);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.28), inset 0 0 15px rgba(212, 175, 55, 0.1);
+  position: relative;
+  margin: 0 auto;
+}
+
+.monogram-badge::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 55, 0.35);
+  pointer-events: none;
+}
+
+.mono-letter {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-gold-light);
+  display: inline-block;
+  transform: translateY(-1px);
+}
+
+.mono-amp {
+  font-family: var(--font-script);
+  font-size: 1.55rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-gold-bright);
+  display: inline-block;
+  margin: 0 -1px;
+  transform: translateY(2px);
 }
 
 .cover-tagline {
@@ -377,15 +407,27 @@ button {
 }
 
 .header-monogram {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  letter-spacing: 0.15em;
+  font-size: 1.05rem;
+  font-weight: 600;
   color: var(--color-gold-light);
   border: 1px solid var(--color-border-gold);
-  padding: 4px 12px;
+  padding: 3px 12px;
   border-radius: var(--radius-full);
   background: rgba(18, 22, 31, 0.6);
   backdrop-filter: blur(8px);
+}
+
+.header-amp {
+  font-family: var(--font-script);
+  font-size: 1.15rem;
+  color: var(--color-gold-bright);
+  line-height: 1;
+  transform: translateY(1px);
 }
 
 .header-action {
