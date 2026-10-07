@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Wedding Invitation • Tinson &amp; Taniya</title>
+
+  <!-- Open Graph / WhatsApp Sharing Preview Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Wedding Invitation • Tinson &amp; Taniya">
+  <meta property="og:description" content="Together with our families, we invite you to celebrate our Holy Matrimony on Monday, October 19, 2026 at OLPH Church, Ayathuppady.">
+  <meta property="og:image" content="assets/images/photo-2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="theme-color" content="#0b0d13">
+
+  <!-- Google Fonts Preload & Stylesheet -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating Ambient Flower Petals Canvas -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- ======================================================================
+       CINEMATIC OPENING ENVELOPE COVER (Tap to Open & Play Music)
+       ====================================================================== -->
+  <section class="cover-overlay" id="coverOverlay" aria-label="Wedding Invitation Envelope">
+    <div class="cover-bg-stars" id="coverStars"></div>
+    
+    <div class="envelope-wrapper">
+      <div class="envelope-card">
+        <!-- Golden Corner Filigree Ornaments -->
+        <div class="corner-ornament corner-tl"></div>
+        <div class="corner-ornament corner-tr"></div>
+        <div class="corner-ornament corner-bl"></div>
+        <div class="corner-ornament corner-br"></div>
+
+        <div class="cover-crest">
+          <div class="monogram-badge">T &amp; T</div>
+        </div>
+
+        <p class="cover-tagline">A Celebration of Love</p>
+        
+        <h1 class="cover-names">
+          <span>Tinson</span>
+          <span class="cover-ampersand">&amp;</span>
+          <span>Taniya</span>
+        </h1>
+
+        <p class="cover-date-preview">Monday • October 19, 2026</p>
+        <p style="font-size: 0.72rem; color: var(--color-gold-light); margin-top: 4px; letter-spacing: 0.1em;">
+          OLPH Church, Ayathuppady
+        </p>
+
+        <!-- Tap to Open Wax Seal Button -->
+        <div class="wax-seal-container">
+          <button class="wax-seal-btn pulse-glow" id="waxSealBtn" aria-label="Tap to Open Wedding Invitation">
+            <div class="wax-seal-inner">
+              <svg class="wax-seal-icon" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+              <span class="wax-seal-text">OPEN</span>
+            </div>
+          </button>
+          <div class="wax-seal-prompt">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"/></svg>
+            <span>Tap to Open Invitation</span>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       FLOATING AUDIO CONTROLLER (Bottom Right)
+       ====================================================================== -->
+  <div class="music-controller" id="musicController" title="Toggle Wedding Music">
+    <button class="music-btn music-paused" id="musicToggleBtn" aria-label="Play or pause background music">
+      <svg id="musicIcon" viewBox="0 0 24 24">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+    </button>
+    <div class="music-visualizer">
+      <div class="wave-bar"></div>
+      <div class="wave-bar"></div>
+      <div class="wave-bar"></div>
+      <div class="wave-bar"></div>
+    </div>
+    <span class="music-label" id="musicLabel">Music</span>
+  </div>
+
+  <!-- ======================================================================
+       MAIN INVITATION APPLICATION CONTAINER (Mobile-First)
+       ====================================================================== -->
+  <main class="wedding-app">
+
+    <!-- Top Brand Bar -->
+    <header class="site-header">
+      <div class="header-monogram">T &amp; T</div>
+      <div class="header-action">
+        <a href="#scheduleSection" class="header-btn">
+          <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+          Events
+        </a>
+      </div>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-section" id="heroSection">
+      <p class="hero-pretitle reveal-item">Together with their families</p>
+      
+      <h1 class="hero-title reveal-item delay-1">
+        <span class="gold-shimmer-text">Tinson</span>
+        <span class="hero-names-connect">&amp;</span>
+        <span class="gold-shimmer-text">Taniya</span>
+      </h1>
+
+      <p class="hero-pretitle reveal-item delay-1" style="margin-top: 4px; letter-spacing: 0.16em;">
+        Request the honour of your presence
+      </p>
+
+      <!-- Couple Arched Portrait Frame -->
+      <div class="hero-photo-wrapper reveal-item delay-2">
+        <div class="hero-photo-frame">
+          <img src="assets/images/photo-2.jpg" alt="Tinson and Taniya" loading="eager" id="heroImage">
+        </div>
+        <div class="hero-photo-glow"></div>
+      </div>
+
+      <p class="hero-wedding-date reveal-item delay-2">Monday, October 19, 2026</p>
+      
+      <div class="hero-church-badge reveal-item delay-3">
+        <svg viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.86L12 5.84zM12 11c-2.76 0-5 2.24-5 5v6h10v-6c0-2.76-2.24-5-5-5zm3 9h-6v-4c0-1.66 1.34-3 3-3s3 1.34 3 3v4z"/></svg>
+        <span>OLPH Church, Ayathuppady</span>
+      </div>
+
+      <!-- Animated Scroll Down Indicator -->
+      <div class="scroll-indicator scroll-indicator-bounce reveal-item delay-4">
+        <span>Scroll Down</span>
+        <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+      </div>
+    </section>
+
+    <!-- 2. EMOTIONAL INVITATION & BLESSINGS -->
+    <section class="section-container" id="messageSection">
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <svg class="section-divider-icon" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <div class="section-divider-line"></div>
+      </div>
+
+      <div class="section-header reveal-item">
+        <p class="section-subtitle">A Sacred Union</p>
+        <h2 class="section-title">Our Wedding Invitation</h2>
+      </div>
+
+      <div class="glass-card message-card reveal-item delay-1">
+        <!-- Scripture Quote -->
+        <div class="scripture-box">
+          <p class="scripture-text">“So they are no longer two, but one flesh. Therefore what God has joined together, let no one separate.”</p>
+          <p class="scripture-ref">— Matthew 19:6</p>
+        </div>
+
+        <!-- Emotional Note -->
+        <p class="emotional-text">
+          Two souls, two hearts, joined in friendship and united forever in love. With the abundant grace of Almighty God and the loving blessings of our beloved parents, we joyfully invite you to celebrate our holy union as we begin our lifelong journey as husband and wife.
+        </p>
+
+        <!-- Couple & Families -->
+        <div class="couple-families-grid">
+          <div class="family-block">
+            <span class="person-role">The Groom</span>
+            <h3 class="person-name">Tinson Esthappan</h3>
+            <p class="parents-detail">
+              <span>Son of <strong>Mr. Esthappan M.O.</strong></span>
+              <span>&amp; <strong>Mrs. Mary Esthappan</strong></span>
+            </p>
+          </div>
+
+          <div style="font-family: var(--font-script); font-size: 2rem; color: var(--color-gold-bright); margin: -4px 0;">
+            with
+          </div>
+
+          <div class="family-block">
+            <span class="person-role">The Bride</span>
+            <h3 class="person-name">Taniya George</h3>
+            <p class="parents-detail">
+              <span>Daughter of <strong>Mr. George M.A.</strong></span>
+              <span>&amp; <strong>Mrs. Gigi George</strong></span>
+            </p>
+          </div>
+        </div>
+
+        <!-- With Love From Tag -->
+        <div class="love-from-tag">
+          With love from <strong>TINCY &amp; TINTO</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. INTERACTIVE SCRATCH-TO-REVEAL DATE -->
+    <section class="section-container scratch-section" id="scratchSection">
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <svg class="section-divider-icon" viewBox="0 0 24 24"><path d="M12 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z"/></svg>
+        <div class="section-divider-line"></div>
+      </div>
+
+      <div class="section-header reveal-item">
+        <p class="section-subtitle">Interactive Card</p>
+        <h2 class="section-title">Scratch to Reveal Date</h2>
+      </div>
+
+      <p class="scratch-instruction reveal-item delay-1">
+        <span class="scratch-hint-icon">✨</span>
+        <span>Scratch the golden seal with your finger or mouse!</span>
+        <span class="scratch-hint-icon">✨</span>
+      </p>
+
+      <!-- The Scratch Card Container -->
+      <div class="scratch-container reveal-item delay-2" id="scratchCardContainer">
+        
+        <!-- Underlying Date Card (Revealed upon scratching) -->
+        <div class="scratch-revealed-content">
+          <span class="scratch-wedding-tag">Holy Matrimony</span>
+          <div class="scratch-big-date">19 OCT</div>
+          <div class="scratch-day-time">Monday, 2026 • 10:30 AM</div>
+          <div class="scratch-venue">OLPH Church, Ayathuppady</div>
+          <div style="margin-top: 14px;">
+            <a href="#" class="gold-btn btn-add-gcal" style="padding: 7px 16px; font-size: 0.72rem;">
+              <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+              Save in Calendar
+            </a>
+          </div>
+        </div>
+
+        <!-- Canvas Scratch Foil Layer -->
+        <canvas id="scratchCanvas"></canvas>
+      </div>
+
+      <p class="scratch-progress-bar reveal-item delay-3" id="scratchProgressText">
+        Touch &amp; scratch the card to reveal our wedding date
+      </p>
+
+      <button class="reveal-btn-fallback" id="scratchFallbackBtn">
+        Tap here to reveal instantly
+      </button>
+    </section>
+
+    <!-- 4. LIVE WEDDING COUNTDOWN TIMER -->
+    <section class="section-container countdown-section" id="countdownSection">
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <svg class="section-divider-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+        <div class="section-divider-line"></div>
+      </div>
+
+      <div class="section-header reveal-item">
+        <p class="section-subtitle">Until We Say “I Do”</p>
+        <h2 class="section-title">Counting Down</h2>
+      </div>
+
+      <div class="countdown-grid reveal-item delay-1">
+        <div class="countdown-box">
+          <span class="countdown-number" id="countDays">00</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="countHours">00</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="countMinutes">00</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-number" id="countSeconds">00</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+
+      <p class="countdown-note reveal-item delay-2" id="countdownNote">
+        October 19, 2026 • 10:30 AM IST
+      </p>
+    </section>
+
+    <!-- 5. EVENTS & CEREMONY SCHEDULE -->
+    <section class="section-container" id="scheduleSection">
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <svg class="section-divider-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+        <div class="section-divider-line"></div>
+      </div>
+
+      <div class="section-header reveal-item">
+        <p class="section-subtitle">Schedule of Events</p>
+        <h2 class="section-title">Ceremony &amp; Celebrations</h2>
+      </div>
+
+      <div class="events-timeline">
+
+        <!-- 1. ENGAGEMENT CEREMONY -->
+        <div class="glass-card event-card reveal-item">
+          <div class="event-badge">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+            <span>Pre-Wedding Milestone</span>
+          </div>
+          <h3 class="event-title">Engagement Ceremony</h3>
+
+          <div class="event-details-list">
+            <div class="event-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+              <div><strong>Monday, October 12, 2026</strong></div>
+            </div>
+            <div class="event-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+              <div><strong>11:30 AM IST</strong></div>
+            </div>
+            <div class="event-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+              <div>OLPH Church, Ayathuppady</div>
+            </div>
+          </div>
+
+          <div class="event-actions">
+            <a href="https://maps.app.goo.gl/BtRUFekoZUrCKaZU7" target="_blank" rel="noopener noreferrer" class="gold-btn">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+
+        <!-- 2. HOLY MATRIMONY (WEDDING) -->
+        <div class="glass-card event-card reveal-item delay-1" style="border-left-color: var(--color-gold-bright);">
+          <div class="event-badge" style="color: var(--color-gold-bright);">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            <span>The Sacred Ceremony</span>
+          </div>
+          <h3 class="event-title">Holy Matrimony</h3>
+
+          <div class="event-details-list">
+            <div class="event-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+              <div><strong>Monday, October 19, 2026</strong></div>
+            </div>
+            <div class="event-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+              <div><strong>10:30 AM IST</strong></div>
+            </div>
+            <div class="event-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+              <div>OLPH Church, Ayathuppady</div>
+            </div>
+          </div>
+
+          <div class="event-actions">
+            <a href="https://maps.app.goo.gl/BtRUFekoZUrCKaZU7" target="_blank" rel="noopener noreferrer" class="gold-btn">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+              Get Directions
+            </a>
+            <a href="#" class="gold-btn-outline btn-add-gcal">
+              <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+              Add to Calendar
+            </a>
+          </div>
+        </div>
+
+        <!-- 3. WEDDING RECEPTION -->
+        <div class="glass-card event-card reveal-item delay-2">
+          <div class="event-badge">
+            <svg viewBox="0 0 24 24" style="width:14px;height:14px;fill:currentColor;"><path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/></svg>
+            <span>Celebratory Feast</span>
+          </div>
+          <h3 class="event-title">Wedding Reception</h3>
+
+          <div class="event-details-list">
+            <div class="event-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+              <div><strong>Monday, October 19, 2026</strong></div>
+            </div>
+            <div class="event-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+              <div>Following the Wedding Ceremony</div>
+            </div>
+            <div class="event-detail-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+              <div>Parish Hall, OLPH Church, Ayathuppady</div>
+            </div>
+          </div>
+
+          <div class="event-actions">
+            <a href="https://maps.app.goo.gl/BtRUFekoZUrCKaZU7" target="_blank" rel="noopener noreferrer" class="gold-btn">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+              Get Directions
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 6. ROMANTIC PHOTO STORY CARD -->
+    <section class="section-container" style="padding-top: 10px; padding-bottom: 20px;">
+      <div class="glass-card reveal-item" style="padding: 16px; text-align: center;">
+        <div style="border-radius: var(--radius-md); overflow: hidden; margin-bottom: 16px; border: 1px solid var(--color-border-gold);">
+          <img src="assets/images/photo-1.jpg" alt="Tinson and Taniya walking together" style="width: 100%; aspect-ratio: 16 / 10; object-fit: cover;">
+        </div>
+        <p class="story-quote">
+          “Walking together into a lifetime of cherished memories and shared laughter.”
+        </p>
+      </div>
+    </section>
+
+    <!-- 7. PHOTO GALLERY & LIGHTBOX -->
+    <section class="section-container" id="gallerySection">
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <svg class="section-divider-icon" viewBox="0 0 24 24"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+        <div class="section-divider-line"></div>
+      </div>
+
+      <div class="section-header reveal-item">
+        <p class="section-subtitle">Cherished Moments</p>
+        <h2 class="section-title">Our Photo Gallery</h2>
+        <p style="font-size: 0.78rem; color: var(--color-ivory-dim); margin-top: 6px;">Tap any photo to view full screen</p>
+      </div>
+
+      <div class="gallery-grid reveal-item delay-1" id="galleryGrid">
+        <!-- 1. Feature Photo (Full Width) -->
+        <div class="gallery-item" data-index="0">
+          <img src="assets/images/photo-2.jpg" alt="Tinson & Taniya portrait" loading="lazy">
+          <div class="gallery-overlay-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+          </div>
+        </div>
+
+        <!-- 2. Walking hand in hand -->
+        <div class="gallery-item" data-index="1">
+          <img src="assets/images/photo-1.jpg" alt="Walking together" loading="lazy">
+          <div class="gallery-overlay-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+          </div>
+        </div>
+
+        <!-- 3. Joyful smile -->
+        <div class="gallery-item" data-index="2">
+          <img src="assets/images/photo-3.jpg" alt="Joyful smile" loading="lazy">
+          <div class="gallery-overlay-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+          </div>
+        </div>
+
+        <!-- 4. Ocean waves -->
+        <div class="gallery-item" data-index="3">
+          <img src="assets/images/photo-4.jpg" alt="Ocean waves" loading="lazy">
+          <div class="gallery-overlay-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+          </div>
+        </div>
+
+        <!-- 5. Tender gaze -->
+        <div class="gallery-item" data-index="4">
+          <img src="assets/images/photo-5.jpg" alt="Tender gaze" loading="lazy">
+          <div class="gallery-overlay-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. VENUE & GOOGLE MAPS -->
+    <section class="section-container" id="venueSection">
+      <div class="section-divider">
+        <div class="section-divider-line"></div>
+        <svg class="section-divider-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+        <div class="section-divider-line"></div>
+      </div>
+
+      <div class="section-header reveal-item">
+        <p class="section-subtitle">Find Your Way</p>
+        <h2 class="section-title">The Church &amp; Venue</h2>
+      </div>
+
+      <div class="glass-card venue-card reveal-item delay-1">
+        <div class="venue-icon-wrapper">
+          <svg viewBox="0 0 24 24"><path d="M12 2l-5.5 9h11L12 2zm0 3.84L13.93 9h-3.86L12 5.84zM12 11c-2.76 0-5 2.24-5 5v6h10v-6c0-2.76-2.24-5-5-5zm3 9h-6v-4c0-1.66 1.34-3 3-3s3 1.34 3 3v4z"/></svg>
+        </div>
+
+        <h3 class="venue-church-name">OLPH Church</h3>
+        <p class="venue-address">
+          Our Lady of Perpetual Help Church<br>
+          Ayathuppady, Kerala<br>
+          <span style="color: var(--color-gold-light); font-size: 0.8rem;">Reception at Parish Hall</span>
+        </p>
+
+        <!-- Google Maps Embed preview -->
+        <div class="map-embed-wrapper">
+          <iframe 
+            class="map-embed-frame"
+            src="https://maps.google.com/maps?q=OLPH+Church+Ayathuppady&t=&z=14&ie=UTF8&iwloc=&output=embed"
+            loading="lazy" 
+            title="Google Maps Location for OLPH Church Ayathuppady">
+          </iframe>
+        </div>
+
+        <!-- Google Maps Direct Button -->
+        <a href="https://maps.app.goo.gl/BtRUFekoZUrCKaZU7" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="gold-btn gold-shimmer-btn" 
+           style="width: 100%; padding: 13px 20px;">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          Open in Google Maps
+        </a>
+      </div>
+    </section>
+
+    <!-- 10. FOOTER -->
+    <footer class="site-footer">
+      <p class="footer-quote">
+        “Love is patient, love is kind. It always protects, always trusts, always hopes, always perseveres.”
+      </p>
+      <div class="footer-names">Tinson &amp; Taniya</div>
+      <p class="footer-with-love">With love from <strong>TINCY &amp; TINTO</strong></p>
+      <p class="footer-credits">October 19, 2026 • OLPH Church, Ayathuppady</p>
+    </footer>
+
+  </main>
+
+  <!-- ======================================================================
+       PHOTO LIGHTBOX MODAL
+       ====================================================================== -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Photo View">
+    <button class="lightbox-close-btn" id="lightboxClose" aria-label="Close Lightbox">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+    <button class="lightbox-nav-btn lightbox-prev-btn" id="lightboxPrev" aria-label="Previous Photo">
+      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+    </button>
+    <button class="lightbox-nav-btn lightbox-next-btn" id="lightboxNext" aria-label="Next Photo">
+      <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+    </button>
+
+    <div class="lightbox-content-box">
+      <img id="lightboxImage" class="lightbox-image" src="" alt="Wedding Photograph">
+      <p id="lightboxCaption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       APPLICATION SCRIPTS
+       ====================================================================== -->
+  <script src="js/wedding-config.js"></script>
+  <script src="js/petals.js"></script>
+  <script src="js/scratch-card.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/audio-player.js"></script>
+  <script src="js/envelope.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
